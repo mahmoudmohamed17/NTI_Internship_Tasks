@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <h3>Enter your password🔐</h3>
+    <div>
+        <input type="password" id="passwordInput" placeholder="Password">
+        <span id="toggleIcon" style="cursor: default">👁️</span>
+    </div>
+</body>
+<script>
+    const passwordInput = document.getElementById('passwordInput');
+    const toggleIcon = document.getElementById('toggleIcon');
+
+    toggleIcon.addEventListener('click', function () {
+        const isPassword = passwordInput.type === 'password';
+        passwordInput.type = isPassword ? 'text' : 'password';
+        toggleIcon.textContent = isPassword ? '🙈' : '👁️';
+    });
+</script>
+
+</html>

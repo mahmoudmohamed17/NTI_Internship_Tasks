@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <input></input>
+</body>
+<script>
+    var inputField = document.querySelector('input');
+    inputField.addEventListener("keydown", function (event) {
+        let ch = parseInt(event.key);
+        if (isNaN(ch)) {
+            event.preventDefault();
+            alert('Only accepts numbers!');
+        }
+    });
+</script>
+
+</html>
