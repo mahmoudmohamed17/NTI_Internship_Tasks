@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<header>
+</header>
+<title>Date Object Task</title>
+
+<body>
+    <script>
+        let value = prompt('Enter a date with the following format (DD-MM-YYYY)')
+        const regExp = /^\d{2}-\d{2}-\d{4}$/;
+        const months = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        function getDate() {
+            while (true) {
+                let input = prompt('Enter a date with the following format (DD-MM-YYYY)');
+                if (!regExp.test(input)) {
+                    alert("Invalid format. Try again.");
+                    continue;
+                }
+                const [day, month, year] = input.split('-');
+                const date = new Date(year, month - 1, day);
+                if (date.getDate() != day || (date.getMonth() + 1) != month || date.getFullYear() != year) {
+                    alert("Invalid date. Please enter a real date.");
+                    continue;
+                }
+                alert(`The date is: ${day}/${months[date.getMonth()]}/${year}`);
+                break;
+            }
+        }
+        getDate();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users Table Task</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tbody id='usersTable'></tbody>
+    </table>
+    <script>
+        let numberOfUsers;
+        while (true) {
+            numberOfUsers = prompt("Enter number of users to input:");
+            if (!isNaN(numberOfUsers) && Number(numberOfUsers) > 0) {
+                numberOfUsers = Number(numberOfUsers);
+                break;
+            } else {
+                alert("Please enter a valid number greater than 0.");
+            }
+        }
+        const users = [];
+        for (let i = 0; i < numberOfUsers; i++) {
+            let name, age;
+            while (true) {
+                name = prompt(`Enter name for user ${i + 1} (length > 3 and < 10):`);
+                if (name.length > 3 && name.length < 10) break;
+                alert("Name must be more than 3 and less than 10 characters.");
+            }
+            while (true) {
+                age = prompt(`Enter age for user ${i + 1} (between 11 and 59):`);
+                age = Number(age);
+                if (!isNaN(age) && age > 10 && age < 60) break;
+                alert("Age must be a number between 11 and 59.");
+            }
+            document.getElementById('usersTable').innerHTML +=
+                `<tr><td>${name}</td><td>${age}</td></tr>`;
+        }
+    </script>
+
+</body>
+
+</html>

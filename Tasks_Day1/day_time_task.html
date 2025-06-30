@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<header>
+</header>
+<title>TimeDate Task</title>
+
+<body>
+    <script>
+        let value = prompt('Enter a date with the following format (DD-MM-YYYY)')
+        const regExp = /^\d{2}-\d{2}-\d{4}$/;
+        const daysOfWeek = new Array('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday')
+        function getDate(input) {
+            if (regExp.test(input)) {
+                const [day, month, year] = input.split('-')
+                const date = new Date(year, month - 1, day)
+                alert(`The day is: ${daysOfWeek[date.getDay()]}`);
+            }
+            else {
+                alert('Invalid date format')
+            }
+        }
+        getDate(value)
+    </script>
+</body>
+
+</html>
