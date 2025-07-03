@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+
+        #header,
+        #footer {
+            position: absolute;
+        }
+
+        #navigation {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        ul#nav {
+            list-style-type: circle;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <img src="dom.jpg" alt="hello..it rains over here:)" />
+    </div>
+
+    <div id="navigation">
+        <ul id="nav">
+            <li><strong>Memo</strong></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Photos</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Clients</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <div id="footer">
+        <img src="dom.jpg" alt="hello..it rains over here:)" />
+    </div>
+
+    <script src="dom.js">
+    </script>
+</body>
+
+</html>
